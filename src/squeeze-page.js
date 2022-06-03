@@ -1,14 +1,22 @@
 import axios from "axios";
 import { useFormik } from "formik";
 import moment from "moment";
-import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useMemo, useState } from "react";
+import { useLocation, useParams } from "react-router-dom";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useQuery } from "react-query";
 import * as yup from "yup";
 
+function useQueryParams() {
+  const { search } = useLocation();
+
+  return useMemo(() => new URLSearchParams(search), [search]);
+}
+
 export function SqueezePage() {
   const params = useParams();
+
+  const queryParams = useQueryParams();
 
   const formik = useFormik({
     initialValues: {
@@ -17,27 +25,35 @@ export function SqueezePage() {
     onSubmit: async (values) => {
       setIsLoading(true);
 
-      await axios.post(
-        `https://api.airtable.com/v0/${useQueryResult.data.airtable.baseId}/${useQueryResult.data.airtable.tableName}`,
-        {
-          records: [
-            {
-              fields: {
-                "Email Address": values.emailAddress,
-                Timestamp: moment().format("YYYY-MM-DD"),
-                Source: "organic",
+      if (useQueryResult.data.airtable) {
+        await axios.post(
+          `https://api.airtable.com/v0/${useQueryResult.data.airtable.baseId}/${useQueryResult.data.airtable.tableName}`,
+          {
+            records: [
+              {
+                fields: {
+                  "Email Address": values.emailAddress,
+                  Timestamp: moment().format("YYYY-MM-DD"),
+                  Source: queryParams.has("queryParams")
+                    ? queryParams.get("utm_source")
+                    : "organic",
+                },
               },
-            },
-          ],
-        },
-        {
-          headers: {
-            authorization: `Bearer ${useQueryResult.data.airtable.apiKey}`,
+            ],
           },
-        }
-      );
+          {
+            headers: {
+              authorization: `Bearer ${useQueryResult.data.airtable.apiKey}`,
+            },
+          }
+        );
+      }
 
       setStatus("success");
+
+      if (useQueryResult.data.action.url) {
+        window.location.href = useQueryResult.data.action.url;
+      }
     },
     validationSchema: yup.object({
       emailAddress: yup
@@ -49,7 +65,7 @@ export function SqueezePage() {
 
   const useQueryResult = useQuery(["page", params.slug], async () => {
     const response = await axios.get(
-      `/data/pages/${params.slug || "morning-brew"}.json`
+      `/data/pages/${params.slug || "a-silly-newsletter"}.json`
     );
 
     return response.data;
@@ -120,10 +136,10 @@ export function SqueezePage() {
           // className="bg-primary col d-none d-lg-block d-md-block full-height"
           className="col d-none d-lg-block d-md-block full-height"
           style={{
-            "background-image": 'url("/images/background-image.jpg")',
-            "background-position": "center",
-            "background-repeat": "no-repeat",
-            "background-size": "cover",
+            backgroundImage: 'url("/images/background-image.jpg")',
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
           }}
         ></Col>
       </Row>

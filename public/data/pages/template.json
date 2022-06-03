@@ -1,0 +1,16 @@
+{
+  "action": {
+    "text": "<INSERT_TEXT_HERE>",
+    "url": "<INSERT_URL_HERE>"
+  },
+  "airtable": null,
+  "main": {
+    "description": "<INSERT_TEXT_HERE>",
+    "subtitle": null,
+    "title": "<INSERT_TEXT_HERE>"
+  },
+  "success": {
+    "subtitle": "<INSERT_TEXT_HERE>",
+    "title": "<INSERT_TEXT_HERE>"
+  }
+}

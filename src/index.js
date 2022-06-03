@@ -21,7 +21,7 @@ root.render(
     <QueryClientProvider client={QUERY_CLIENT}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/morning-brew" />} />
+          <Route path="/" element={<Navigate to="/a-silly-newsletter" />} />
           <Route path="/:slug" element={<SqueezePage />} />
         </Routes>
       </BrowserRouter>
