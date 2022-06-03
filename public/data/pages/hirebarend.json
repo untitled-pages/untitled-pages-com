@@ -1,0 +1,20 @@
+{
+  "action": {
+    "text": "Get In Touch",
+    "url": "<INSERT_URL_HERE>"
+  },
+  "airtable": {
+    "apiKey": "keywUEWZniOrHqDgC",
+    "baseId": "appWR4jHBZKYWT5bf",
+    "tableName": "Leads"
+  },
+  "main": {
+    "description": "A Certified Microsoft Solutions Architect with over 8 years of experience in the software engineering industry looking to grow your business.",
+    "subtitle": null,
+    "title": "I'm Barend Erasmus"
+  },
+  "success": {
+    "subtitle": "<INSERT_TEXT_HERE>",
+    "title": "<INSERT_TEXT_HERE>"
+  }
+}
