@@ -70,8 +70,7 @@ export function SqueezePage() {
           <Col className="col p-5" md={6} sm={12} xs={12}>
             <h1 className="display-2">{useQueryResult.data.success.title}</h1>
             <p className="lead">
-              <b>{useQueryResult.data.success.subtitle}</b>{" "}
-              {moment().format("YYYY-MM-DD")}
+              <b>{useQueryResult.data.success.subtitle}</b>
             </p>
           </Col>
           <Col className="bg-primary col d-none d-lg-block d-md-block full-height"></Col>
