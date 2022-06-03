@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  font-family: "Inter";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$font-family-sans-serif: "Inter";
+$font-family-monospace: "Inter";
+
+$theme-colors: (
+  "primary": #3368fa,
+);
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+.full-height {
+  height: 100vh;
+}
