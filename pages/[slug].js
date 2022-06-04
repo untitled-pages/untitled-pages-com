@@ -40,6 +40,8 @@ export default function Slug(props) {
 
       setStatus("end");
 
+      window.scrollTo(0, 0);
+
       if (props.action.url) {
         window.location.href = props.action.url;
       }
@@ -120,7 +122,9 @@ export default function Slug(props) {
 }
 
 export async function getStaticPaths() {
-  const response = await axios.get(`https://untitledpages.com/data/pages/pages.json`);
+  const response = await axios.get(
+    `https://untitledpages.com/data/pages/pages.json`
+  );
 
   return {
     paths: response.data.map((x) => {
