@@ -1,0 +1,24 @@
+{
+  "action": {
+    "text": "Let's build something amazing",
+    "url": null
+  },
+  "airtable": {
+    "apiKey": "keywUEWZniOrHqDgC",
+    "baseId": "appWR4jHBZKYWT5bf",
+    "tableName": "Leads"
+  },
+  "pages": {
+    "end": {
+      "image": null,
+      "subtitle": "We'll be in touch soon to discuss your needs",
+      "title": "Can't wait!"
+    },
+    "main": {
+      "description": "a Certified Microsoft Solutions Architect, designing and building systems for fintech companies using my 8+ years of experience in the software engineering industry.",
+      "image": "/images/pages/founder.png",
+      "subtitle": null,
+      "title": "I'm Barend Erasmus"
+    }
+  }
+}

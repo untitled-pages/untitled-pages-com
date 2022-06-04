@@ -49,7 +49,7 @@ export function SqueezePage() {
         );
       }
 
-      setStatus("success");
+      setStatus("end");
 
       if (useQueryResult.data.action.url) {
         window.location.href = useQueryResult.data.action.url;
@@ -79,14 +79,14 @@ export function SqueezePage() {
     return <></>;
   }
 
-  if (status === "success") {
+  if (status === "end") {
     return (
       <main>
         <Row className="align-items-center m-0">
           <Col className="col p-5" md={6} sm={12} xs={12}>
-            <h1 className="display-2">{useQueryResult.data.success.title}</h1>
+            <h1 className="display-2">{useQueryResult.data.pages.end.title}</h1>
             <p className="lead">
-              <b>{useQueryResult.data.success.subtitle}</b>
+              <b>{useQueryResult.data.pages.end.subtitle}</b>
             </p>
           </Col>
           <Col className="bg-primary col d-none d-lg-block d-md-block full-height"></Col>
@@ -99,14 +99,14 @@ export function SqueezePage() {
     <main>
       <Row className="align-items-center m-0">
         <Col className="col p-5" md={6} sm={12} xs={12}>
-          <h1 className="display-2">{useQueryResult.data.main.title}</h1>
-          {useQueryResult.data.main.subtitle ? (
+          <h1 className="display-2">{useQueryResult.data.pages.main.title}</h1>
+          {useQueryResult.data.pages.main.subtitle ? (
             <p className="lead">
-              <b>{useQueryResult.data.main.subtitle}</b>
+              <b>{useQueryResult.data.pages.main.subtitle}</b>
             </p>
           ) : null}
 
-          <p className="lead">{useQueryResult.data.main.description}</p>
+          <p className="lead">{useQueryResult.data.pages.main.description}</p>
 
           <Form onSubmit={formik.handleSubmit}>
             <Form.Group>
@@ -132,17 +132,20 @@ export function SqueezePage() {
             </Button>
           </Form>
         </Col>
-        <Col
-          // className="bg-primary col d-none d-lg-block d-md-block full-height"
-          // className="col d-none d-lg-block d-md-block full-height"
-          className="col full-height"
-          style={{
-            backgroundImage: 'url("/images/background-image.png")',
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        ></Col>
+
+        {useQueryResult.data.pages.main.image ? (
+          <Col
+            className="col full-height"
+            style={{
+              backgroundImage: `url("${useQueryResult.data.pages.main.image}")`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          ></Col>
+        ) : (
+          <Col className="bg-primary col d-none d-lg-block d-md-block full-height"></Col>
+        )}
       </Row>
     </main>
   );

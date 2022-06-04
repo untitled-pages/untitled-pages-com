@@ -8,13 +8,17 @@
     "baseId": "appWR4jHBZKYWT5bf",
     "tableName": "Leads"
   },
-  "main": {
-    "description": "Get the daily email that makes reading the news enjoyable. Stay informed and entertained, for free.",
-    "subtitle": null,
-    "title": "Become smarter in just 5 minutes"
-  },
-  "success": {
-    "subtitle": "Here's what to expect - You’ll see us in your inbox every morning. In our daily business newsletter, we’ll cover Federal Reserve policy, Tesla’s grand ambitions, IPOs, the memes dominating pop-culture, and a whole lot more.",
-    "title": "You're In! Thanks for subscribing."
+  "pages": {
+    "end": {
+      "image": null,
+      "subtitle": "Here's what to expect - You’ll see us in your inbox every morning. In our daily business newsletter, we’ll cover Federal Reserve policy, Tesla’s grand ambitions, IPOs, the memes dominating pop-culture, and a whole lot more.",
+      "title": "You're In! Thanks for subscribing."
+    },
+    "main": {
+      "description": "Get the daily email that makes reading the news enjoyable. Stay informed and entertained, for free.",
+      "image": null,
+      "subtitle": null,
+      "title": "Become smarter in just 5 minutes"
+    }
   }
 }
