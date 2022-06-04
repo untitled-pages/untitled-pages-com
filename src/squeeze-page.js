@@ -114,7 +114,7 @@ export function SqueezePage() {
                 autoComplete="email"
                 name="emailAddress"
                 onChange={formik.handleChange}
-                placeholder="Enter Your Email Address"
+                placeholder="Enter your email address"
                 size="lg"
                 type="email"
                 value={formik.values.emailAddress}
@@ -134,9 +134,10 @@ export function SqueezePage() {
         </Col>
         <Col
           // className="bg-primary col d-none d-lg-block d-md-block full-height"
-          className="col d-none d-lg-block d-md-block full-height"
+          // className="col d-none d-lg-block d-md-block full-height"
+          className="col full-height"
           style={{
-            backgroundImage: 'url("/images/background-image.jpg")',
+            backgroundImage: 'url("/images/background-image.png")',
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",

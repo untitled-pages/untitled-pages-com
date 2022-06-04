@@ -1,7 +1,7 @@
 {
   "action": {
-    "text": "Get In Touch",
-    "url": "<INSERT_URL_HERE>"
+    "text": "Let's build something amazing",
+    "url": null
   },
   "airtable": {
     "apiKey": "keywUEWZniOrHqDgC",
@@ -9,7 +9,7 @@
     "tableName": "Leads"
   },
   "main": {
-    "description": "A Certified Microsoft Solutions Architect with over 8 years of experience in the software engineering industry looking to grow your business.",
+    "description": "a Certified Microsoft Solutions Architect, designing and building systems for fintech companies.",
     "subtitle": null,
     "title": "I'm Barend Erasmus"
   },
