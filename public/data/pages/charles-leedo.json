@@ -5,10 +5,10 @@
     "tableName": "Leads"
   },
   "completeText": "Get in touch",
-  "image": "/images/pages/charles-leedo.jpg",
+  "image": "https://core.rebase.ai/assets/img/profile-pics/charlesl2.jpg",
   "pages": [
     {
-      "description": "Looking for a new place to call home, want to invest, or sell? We’re all ears, let’s chat.",
+      "description": "I always wanted to become a Architect so I studied in Stellenbosch and passed my national and international qualifications, realizing its not what I wanted to do ,I build up experience in construction to learn a different aspect of building and thats where passion and hard work got together to become a Commercial Property Broker, not to only SELL a client a home but a investment for my clients business and hard work.",
       "elements": [
         {
           "autoComplete": "name",
