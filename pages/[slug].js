@@ -7,7 +7,7 @@ import * as yup from "yup";
 export default function Slug(props) {
   const [isLoading, setIsLoading] = useState(false);
 
-  const [pageIndex, setPageIndex] = useState(1);
+  const [pageIndex, setPageIndex] = useState(0);
 
   const formik = useFormik({
     initialValues: props.pages[pageIndex].elements.reduce((dict, x) => {
@@ -19,28 +19,57 @@ export default function Slug(props) {
       setIsLoading(true);
 
       if (props.airtable) {
-        await axios.post(
-          `https://api.airtable.com/v0/${props.airtable.baseId}/${props.airtable.tableName}`,
-          {
-            records: [
-              {
-                fields: props.pages[pageIndex].elements.reduce(
-                  (dict, element) => {
-                    dict[element.name] = values[element.name];
-
-                    return dict;
-                  },
-                  dict
-                ),
+        try {
+          const response = await axios.get(
+            `https://rest.smsportal.com/v2/Authentication`,
+            {
+              auth: {
+                password: "TIq4qPiwe2FMHIZlbbINjNc/4OHL/uGt",
+                username: "fdfa1e6e-915f-413b-9d0a-701bea46d1cd",
               },
-            ],
-          },
-          {
-            headers: {
-              authorization: `Bearer ${props.airtable.apiKey}`,
+            }
+          );
+
+          await axios.post(
+            "https://rest.smsportal.com/v2/BulkMessages",
+            {
+              messages: [
+                {
+                  content: `Contact ${values.name}, ${values.emailAddress}, ${values.mobileNumber}`,
+                  destination: "0766542813",
+                },
+              ],
             },
-          }
-        );
+            {
+              headers: {
+                authorization: `Bearer ${response.data.token}`,
+              },
+            }
+          );
+
+          await axios.post(
+            `https://api.airtable.com/v0/${props.airtable.baseId}/${props.airtable.tableName}`,
+            {
+              records: [
+                {
+                  fields: props.pages[pageIndex].elements.reduce(
+                    (dict, element) => {
+                      dict[element.name] = values[element.name];
+
+                      return dict;
+                    },
+                    {}
+                  ),
+                },
+              ],
+            },
+            {
+              headers: {
+                authorization: `Bearer ${props.airtable.apiKey}`,
+              },
+            }
+          );
+        } catch {}
       }
 
       setPageIndex(pageIndex + 1);
@@ -49,7 +78,11 @@ export default function Slug(props) {
     },
     validationSchema: yup.object(
       props.pages[pageIndex].elements.reduce((dict, x) => {
-        dict[x.name] = yup.string().required();
+        if (x.type === "email") {
+          dict[x.name] = yup.string().email().required();
+        } else {
+          dict[x.name] = yup.string().required();
+        }
 
         return dict;
       }, {})
@@ -123,10 +156,10 @@ export default function Slug(props) {
 }
 
 export async function getStaticPaths() {
-  return {
-    paths: [],
-    fallback: false,
-  };
+  // return {
+  //   paths: [],
+  //   fallback: false,
+  // };
 
   const response = await axios.get(
     `https://untitledpages.com/data/pages/pages.json`
