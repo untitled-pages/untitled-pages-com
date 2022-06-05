@@ -58,6 +58,14 @@ const data1 = [
     Area: "Cape Town",
   },
   {
+    "First Name": "Jeremy",
+    "Last Name": "Thomson",
+    "Email Address": "pangolins@mail.com",
+    "Mobile Number": "0825210032",
+    "Ice Breaker": "",
+    Area: "Atlantic Seaboard",
+  },
+  {
     "First Name": "Charles",
     "Last Name": "Leedo",
     "Email Address": "charles.leedo@galetti.co.za",

@@ -92,6 +92,17 @@ export default function Slug(props) {
   return (
     <main>
       <Row className="align-items-center m-0">
+        {props.image ? (
+          <Col
+            className="col d-block d-lg-none d-md-none full-height"
+            style={{
+              backgroundImage: `url("${props.image}")`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          ></Col>
+        ) : null}
         <Col className="col p-5" md={6} sm={12} xs={12}>
           {props.pages[pageIndex].title ? (
             <h1 className="display-2">{props.pages[pageIndex].title}</h1>
@@ -139,7 +150,7 @@ export default function Slug(props) {
 
         {props.image ? (
           <Col
-            className="col full-height"
+            className="col d-none d-lg-block d-md-block full-height"
             style={{
               backgroundImage: `url("${props.image}")`,
               backgroundPosition: "center",
