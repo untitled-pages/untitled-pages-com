@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useFormik } from "formik";
-import moment from "moment";
 import { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import * as yup from "yup";
@@ -8,12 +7,14 @@ import * as yup from "yup";
 export default function Slug(props) {
   const [isLoading, setIsLoading] = useState(false);
 
-  const [status, setStatus] = useState("main");
+  const [pageIndex, setPageIndex] = useState(1);
 
   const formik = useFormik({
-    initialValues: {
-      email: "",
-    },
+    initialValues: props.pages[pageIndex].elements.reduce((dict, x) => {
+      dict[x.name] = "";
+
+      return dict;
+    }, {}),
     onSubmit: async (values) => {
       setIsLoading(true);
 
@@ -23,10 +24,14 @@ export default function Slug(props) {
           {
             records: [
               {
-                fields: {
-                  "Email Address": values.emailAddress,
-                  Timestamp: moment().format("YYYY-MM-DD"),
-                },
+                fields: props.pages[pageIndex].elements.reduce(
+                  (dict, element) => {
+                    dict[element.name] = values[element.name];
+
+                    return dict;
+                  },
+                  dict
+                ),
               },
             ],
           },
@@ -38,76 +43,72 @@ export default function Slug(props) {
         );
       }
 
-      setStatus("end");
+      setPageIndex(pageIndex + 1);
 
       window.scrollTo(0, 0);
-
-      if (props.action.url) {
-        window.location.href = props.action.url;
-      }
     },
-    validationSchema: yup.object({
-      emailAddress: yup
-        .string("Enter your email")
-        .email("Enter a valid email")
-        .required("Email is required"),
-    }),
-  });
+    validationSchema: yup.object(
+      props.pages[pageIndex].elements.reduce((dict, x) => {
+        dict[x.name] = yup.string().required();
 
-  if (status === "end") {
-    return (
-      <main>
-        <Row className="align-items-center m-0">
-          <Col className="col p-5" md={6} sm={12} xs={12}>
-            <h1 className="display-2">{props.pages.end.title}</h1>
-            <p className="lead">
-              <b>{props.pages.end.subtitle}</b>
-            </p>
-          </Col>
-          <Col className="bg-primary col d-none d-lg-block d-md-block full-height"></Col>
-        </Row>
-      </main>
-    );
-  }
+        return dict;
+      }, {})
+    ),
+  });
 
   return (
     <main>
       <Row className="align-items-center m-0">
         <Col className="col p-5" md={6} sm={12} xs={12}>
-          <h1 className="display-2">{props.pages.main.title}</h1>
+          {props.pages[pageIndex].title ? (
+            <h1 className="display-2">{props.pages[pageIndex].title}</h1>
+          ) : null}
 
-          <p className="lead">{props.pages.main.description}</p>
+          {props.pages[pageIndex].description ? (
+            <p className="lead">{props.pages[pageIndex].description}</p>
+          ) : null}
 
           <Form onSubmit={formik.handleSubmit}>
-            <Form.Group>
-              <Form.Control
-                autoComplete="email"
-                name="emailAddress"
-                onChange={formik.handleChange}
-                placeholder="Enter your email address"
-                size="lg"
-                type="email"
-                value={formik.values.emailAddress}
-              />
-            </Form.Group>
+            {props.pages[pageIndex].elements.map((element) => (
+              <Form.Group className="my-3" key={element.name}>
+                <Form.Control
+                  autoComplete={element.type}
+                  isInvalid={
+                    formik.touched[element.name] && formik.errors[element.name]
+                  }
+                  isValid={
+                    formik.touched[element.name] && !formik.errors[element.name]
+                  }
+                  name={element.name}
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  placeholder={element.placeholder}
+                  size="lg"
+                  type={element.type}
+                  value={formik.values[element.name]}
+                />
+              </Form.Group>
+            ))}
 
-            <Button
-              className="my-2 w-100"
-              disabled={isLoading}
-              size="lg"
-              type="submit"
-              variant="primary"
-            >
-              {props.action.text}
-            </Button>
+            {pageIndex === props.pages.length - 1 ? null : (
+              <Button
+                className="my-2 w-100"
+                disabled={isLoading}
+                size="lg"
+                type="submit"
+                variant="primary"
+              >
+                {props.completeText}
+              </Button>
+            )}
           </Form>
         </Col>
 
-        {props.pages.main.image ? (
+        {props.image ? (
           <Col
             className="col full-height"
             style={{
-              backgroundImage: `url("${props.pages.main.image}")`,
+              backgroundImage: `url("${props.image}")`,
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
@@ -122,6 +123,11 @@ export default function Slug(props) {
 }
 
 export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: false,
+  };
+
   const response = await axios.get(
     `https://untitledpages.com/data/pages/pages.json`
   );

@@ -4,11 +4,11 @@
     "baseId": "appWR4jHBZKYWT5bf",
     "tableName": "Leads"
   },
-  "completeText": "Let's build something amazing",
+  "completeText": "Get in touch",
   "image": "/images/pages/founder.jpg",
   "pages": [
     {
-      "description": "a Certified Microsoft Solutions Architect, designing and building systems for fintech companies using my 8+ years of experience in the software engineering industry.",
+      "description": "Looking for a new place to call home, want to invest, or sell? We’re all ears, let’s chat.",
       "elements": [
         {
           "autoComplete": "name",
@@ -33,7 +33,7 @@
         }
       ],
       "name": "page1",
-      "title": "I'm Barend Erasmus"
+      "title": "I'm Charles Leedo"
     },
     {
       "description": null,
