@@ -2,9 +2,7 @@ import "../styles/globals.scss";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
-  const title = pageProps.pages
-    ? pageProps.pages[0].title
-    : "Untitled Pages - Open Source Website &amp; Landing Page Software Small Businesses";
+  const title = pageProps.pages ? pageProps.pages[0].title : "Untitled Pages";
 
   const description = pageProps.pages
     ? pageProps.pages[0].description
