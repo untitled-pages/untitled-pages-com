@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useFormik } from "formik";
+import mixpanel from "mixpanel-browser";
 import { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import * as yup from "yup";
@@ -17,6 +18,8 @@ export default function Slug(props) {
     }, {}),
     onSubmit: async (values) => {
       setIsLoading(true);
+
+      mixpanel.track("Lead");
 
       if (props.airtable) {
         try {

@@ -1,5 +1,7 @@
 import "../styles/globals.scss";
 import Head from "next/head";
+import mixpanel from "mixpanel-browser";
+import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
   const title = pageProps.pages ? pageProps.pages[0].title : "Untitled Pages";
@@ -7,6 +9,12 @@ function MyApp({ Component, pageProps }) {
   const description = pageProps.pages
     ? pageProps.pages[0].description
     : "A powerful landing page builder that helps create high-converting landing pages and drive sales for businesses. Lead generation and opt-in tools integrated.";
+
+  useEffect(() => {
+    mixpanel.init("912151389068ccdc20b1323fa990ca65");
+
+    mixpanel.track("Page View");
+  }, []);
 
   return (
     <>
