@@ -13,8 +13,8 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     mixpanel.init("912151389068ccdc20b1323fa990ca65");
 
-    mixpanel.track("Page View");
-  }, []);
+    mixpanel.track("Page View", { slug: pageProps.slug });
+  }, [pageProps.slug]);
 
   return (
     <>

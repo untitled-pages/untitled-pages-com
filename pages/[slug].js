@@ -19,7 +19,7 @@ export default function Slug(props) {
     onSubmit: async (values) => {
       setIsLoading(true);
 
-      mixpanel.track("Lead");
+      mixpanel.track("Lead", { slug: props.slug });
 
       if (props.airtable) {
         try {
