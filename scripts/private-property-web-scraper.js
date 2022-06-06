@@ -51,26 +51,36 @@ const path = require("path");
       "Eighty2 On M",
       "EIGHTY2 ON M is a bold new development, located in the heart of Sea Point's high street within close proximity to the beachfront and Promenade. The building will house 100 units – Micro, Studio, One Bedroom and Two Bedroom apartments. Intelligently and thoughtfully designed, this development conceptualises a modern playfulness and discerning attention to detail. EIGHTY2 ON M is a green building, not only in terms of natural spaces but also energy. The building boasts green, landscaped spaces with an urban garden.",
     ],
-    // [
-    //   "https://www.privateproperty.co.za/developments/Durbanville-Central/kings-corner/X6126.htm",
-    //   "kings-corner",
-    // ],
-    // [
-    //   "https://www.privateproperty.co.za/developments/Vredekloof/glenwood/X6121.htm",
-    //   "glenwood",
-    // ],
-    // [
-    //   "https://www.privateproperty.co.za/developments/Fresnaye/station-house/X5982.htm",
-    //   "station-house",
-    // ],
-    // [
-    //   "https://www.privateproperty.co.za/developments/Riebeek-West/allesverloren/X6104.htm",
-    //   "allesverloren",
-    // ],
-    // [
-    //   "https://www.privateproperty.co.za/developments/Simons-Town/harbour-bay/X6106.htm",
-    //   "harbour-bay",
-    // ],
+    [
+      "https://www.privateproperty.co.za/developments/Durbanville-Central/kings-corner/X6126.htm",
+      "kings-corner",
+      "King's Corner",
+      "King's Corner has been created for living and enjoying life. The development comprises 27 expertly designed luxury studios & 2-bedroom apartments located in the popular Durbanville Central, the “new” hub of Cape Town.",
+    ],
+    [
+      "https://www.privateproperty.co.za/developments/Vredekloof/glenwood/X6121.htm",
+      "glenwood",
+      "Glenwood",
+      "Amazing investment opportunity awaits. Brand new two bedroom one full bathroom apartments in Secure Estate. Apartments vary from 60 sqm to 73 sqm. Great estimated rental returns.",
+    ],
+    [
+      "https://www.privateproperty.co.za/developments/Fresnaye/station-house/X5982.htm",
+      "station-house",
+      "Station House",
+      "Located on the border of Fresnaye and Sea Point and within a stone's throw from the beachfront promenade, Station House is the ultimate address for convenient living and offers savvy Investors excellent growth opportunities. You do not just live large when you are at Station House. Conveniently located in the trendy and affluent Fresnaye area, within greater Sea Point, Station House is mere minutes away from everywhere else you might want to be. Within 10 minutes of the famous Clifton beaches and the V&A Waterfront and Table Mountain, Station House is well located.",
+    ],
+    [
+      "https://www.privateproperty.co.za/developments/Riebeek-West/allesverloren/X6104.htm",
+      "allesverloren",
+      "Allesverloren",
+      "Allesverloren sets a new standard for luxury multi-generational living. Nestled on a gentle rise neighbouring the world-famous Allesverloren Wine Estate, it’s conveniently close to Cape Town yet still a whole world away.",
+    ],
+    [
+      "https://www.privateproperty.co.za/developments/Simons-Town/harbour-bay/X6106.htm",
+      "harbour-bay",
+      "Harbour Bay",
+      "Phase 2 of the Cape’s most exclusive retirement development, Noble Resorts - Harbour Bay, is now selling. Harbour Bay represents a massive R1 Billion investment into Simon's Town and the surrounding area.",
+    ],
   ];
 
   const objs = [];
