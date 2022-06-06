@@ -1,177 +1,156 @@
-import axios from "axios";
-import { useFormik } from "formik";
-import { useState } from "react";
-import { Button, Col, Form, Row } from "react-bootstrap";
-import * as yup from "yup";
+import Image from "next/image";
+import Link from "next/link";
+import { Button, Col, Container, Nav, Navbar, Row } from "react-bootstrap";
 
-export default function Home(props) {
-  const [isLoading, setIsLoading] = useState(false);
-
-  const [pageIndex, setPageIndex] = useState(0);
-
-  const formik = useFormik({
-    initialValues: props.pages[pageIndex].elements.reduce((dict, x) => {
-      dict[x.name] = "";
-
-      return dict;
-    }, {}),
-    onSubmit: async (values) => {
-      setIsLoading(true);
-
-      if (props.airtable) {
-        try {
-          const response = await axios.get(
-            `https://rest.smsportal.com/v2/Authentication`,
-            {
-              auth: {
-                password: "TIq4qPiwe2FMHIZlbbINjNc/4OHL/uGt",
-                username: "fdfa1e6e-915f-413b-9d0a-701bea46d1cd",
-              },
-            }
-          );
-
-          await axios.post(
-            "https://rest.smsportal.com/v2/BulkMessages",
-            {
-              messages: [
-                {
-                  content: `Contact ${values.name}, ${values.emailAddress}, ${values.mobileNumber}`,
-                  destination: "0766542813",
-                },
-              ],
-            },
-            {
-              headers: {
-                authorization: `Bearer ${response.data.token}`,
-              },
-            }
-          );
-
-          await axios.post(
-            `https://api.airtable.com/v0/${props.airtable.baseId}/${props.airtable.tableName}`,
-            {
-              records: [
-                {
-                  fields: props.pages[pageIndex].elements.reduce(
-                    (dict, element) => {
-                      dict[element.name] = values[element.name];
-
-                      return dict;
-                    },
-                    {}
-                  ),
-                },
-              ],
-            },
-            {
-              headers: {
-                authorization: `Bearer ${props.airtable.apiKey}`,
-              },
-            }
-          );
-        } catch {}
-      }
-
-      setPageIndex(pageIndex + 1);
-
-      window.scrollTo(0, 0);
-    },
-    validationSchema: yup.object(
-      props.pages[pageIndex].elements.reduce((dict, x) => {
-        if (x.type === "email") {
-          dict[x.name] = yup.string().email().required();
-        } else {
-          dict[x.name] = yup.string().required();
-        }
-
-        return dict;
-      }, {})
-    ),
-  });
-
+export default function Home() {
   return (
-    <main>
-      <Row className="align-items-center m-0">
-        {props.image ? (
-          <Col
-            className="col d-block d-lg-none d-md-none full-height"
-            style={{
-              backgroundImage: `url("${props.image}")`,
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></Col>
-        ) : null}
-        <Col className="col p-5" md={6} sm={12} xs={12}>
-          {props.pages[pageIndex].title ? (
-            <h1 className="display-2">{props.pages[pageIndex].title}</h1>
-          ) : null}
+    <>
+      <Navbar>
+        <Container>
+          <Navbar.Brand href="#home">Untitled Pages</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="https://github.com/untitled-pages">
+                GitHub
+              </Nav.Link>
+              <Nav.Link href="/founder">Founder</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
 
-          {props.pages[pageIndex].description ? (
-            <p className="lead">{props.pages[pageIndex].description}</p>
-          ) : null}
+      <div className="bg-light">
+        <Container className="py-5">
+          <Row className="m-0">
+            <Col className="p-5" md={6} sm={12} xs={12}>
+              <h1 className="display-4 fw-bold">Turn visitors into leads</h1>
+              <p className="lead">
+                Start relationships on the right foot with a friendly page that
+                invite people to leave their email.
+              </p>
 
-          <Form onSubmit={formik.handleSubmit}>
-            {props.pages[pageIndex].elements.map((element) => (
-              <Form.Group className="my-3" key={element.name}>
-                <Form.Control
-                  autoComplete={element.type}
-                  isInvalid={
-                    formik.touched[element.name] && formik.errors[element.name]
-                  }
-                  isValid={
-                    formik.touched[element.name] && !formik.errors[element.name]
-                  }
-                  name={element.name}
-                  onBlur={formik.handleBlur}
-                  onChange={formik.handleChange}
-                  placeholder={element.placeholder}
-                  size="lg"
-                  type={element.type}
-                  value={formik.values[element.name]}
-                />
-              </Form.Group>
-            ))}
-
-            {pageIndex === props.pages.length - 1 ? null : (
-              <Button
-                className="my-2 w-100"
-                disabled={isLoading}
-                size="lg"
-                type="submit"
-                variant="primary"
-              >
-                {props.completeText}
+              <Button size="lg" variant="primary">
+                Get started for free
               </Button>
-            )}
-          </Form>
-        </Col>
+            </Col>
+            <Col>
+              <Image
+                alt="Illustration"
+                height={528.67134}
+                src="/images/undraw_landing_page_re_6xev.svg"
+                unoptimized={true}
+                width={873}
+              />
+            </Col>
+          </Row>
+        </Container>
+      </div>
 
-        {props.image ? (
-          <Col
-            className="col d-none d-lg-block d-md-block full-height"
-            style={{
-              backgroundImage: `url("${props.image}")`,
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></Col>
-        ) : (
-          <Col className="bg-primary col d-none d-lg-block d-md-block full-height"></Col>
-        )}
-      </Row>
-    </main>
+      <Container className="p-5">
+        <footer>
+          <Row>
+            <Col className="py-2" md={2} sm={12} xs={12}>
+              <h5>Untitled Pages</h5>
+              <ul className="flex-column nav">
+                <li className="mb-2 nav-item">
+                  <Link href="/">
+                    <a className="nav-link p-0 text-muted">Home</a>
+                  </Link>
+                </li>
+                <li className="mb-2 nav-item">
+                  <Link href="https://github.com/untitled-pages">
+                    <a className="nav-link p-0 text-muted">GitHub</a>
+                  </Link>
+                </li>
+              </ul>
+            </Col>
+
+            <Col className="py-2" md={2} sm={12} xs={12}>
+              <h5>Private Property</h5>
+              <ul className="flex-column nav">
+                <li className="mb-2 nav-item">
+                  <Link href="/3-on-buckingham">
+                    <a className="nav-link p-0 text-muted">3 On Buckingham</a>
+                  </Link>
+                </li>
+                <li className="mb-2 nav-item">
+                  <Link href="/19-on-torquay">
+                    <a className="nav-link p-0 text-muted">19 On Torquay</a>
+                  </Link>
+                </li>
+                <li className="mb-2 nav-item">
+                  <Link href="/96-on-newlands">
+                    <a className="nav-link p-0 text-muted">96 On newlands</a>
+                  </Link>
+                </li>
+                <li className="mb-2 nav-item">
+                  <Link href="/allesverloren">
+                    <a className="nav-link p-0 text-muted">Allesverloren</a>
+                  </Link>
+                </li>
+                <li className="mb-2 nav-item">
+                  <Link href="/arnim-apartments">
+                    <a className="nav-link p-0 text-muted">Arnim Apartments</a>
+                  </Link>
+                </li>
+              </ul>
+            </Col>
+
+            <Col className="py-2" md={2} sm={12} xs={12}>
+              <h5>Others</h5>
+              <ul className="flex-column nav">
+                <li className="mb-2 nav-item">
+                  <Link href="/founder">
+                    <a className="nav-link p-0 text-muted">Founder</a>
+                  </Link>
+                </li>
+                <li className="mb-2 nav-item">
+                  <Link href="/charles-leedo">
+                    <a className="nav-link p-0 text-muted">Charles Leedo</a>
+                  </Link>
+                </li>
+              </ul>
+            </Col>
+
+            <Col className="py-2" md={{ offset: 2, span: 4 }} sm={12} xs={12}>
+              <form>
+                <h5>Don&apos;t miss out</h5>
+                <p>Sign up for our newsletter to stay in the loop</p>
+                <div className="d-flex w-100 gap-2">
+                  <label className="visually-hidden">Email address</label>
+                  <input
+                    id="newsletter1"
+                    type="text"
+                    className="form-control"
+                    placeholder="Enter your email address"
+                  />
+                  <button className="btn btn-primary" type="button">
+                    Subscribe
+                  </button>
+                </div>
+              </form>
+            </Col>
+          </Row>
+
+          <div className="d-flex justify-content-between py-4 my-4 border-top">
+            <p>&copy; {new Date().getFullYear()} Untitled Pages</p>
+          </div>
+        </footer>
+      </Container>
+    </>
   );
 }
 
 export async function getStaticProps({ params }) {
-  const response = await axios.get(
-    `https://untitledpages.com/data/pages/founder.json`
-  );
-
   return {
-    props: response.data,
+    props: {
+      meta: {
+        description:
+          "Start relationships on the right foot with a friendly page that invite people to leave their email.",
+        image: "/images/open-graph-image.jpg",
+        title: "Untitled Pages - Turn visitors into leads",
+      },
+    },
   };
 }
