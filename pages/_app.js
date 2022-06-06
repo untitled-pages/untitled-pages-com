@@ -15,6 +15,16 @@ function MyApp({ Component, pageProps }) {
 
         <meta content={description} name="description" />
 
+        <meta property="og:title" content={title} />
+        <meta property="og:site_name" content="Untitled Pages" />
+        <meta
+          property="og:url"
+          content={`https://untitledpages.com/${pageProps.slug}`}
+        />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageProps.image} />
+
         <link rel="preconnect" href="https://fonts.gstatic.com" />
       </Head>
       <Component {...pageProps} />

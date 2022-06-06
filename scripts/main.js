@@ -131,5 +131,5 @@ for (const datum of data1) {
 
 fs.writeFileSync(
   path.join(__dirname, "..", "public", "data", "pages", `pages.json`),
-  JSON.stringify(["founder", ...data1.map((x) => x.slug)])
+  JSON.stringify(["founder", "the-holly", ...data1.map((x) => x.slug)])
 );
