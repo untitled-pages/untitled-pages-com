@@ -42,5 +42,8 @@
       "title": "We'll talk soon!"
     }
   ],
-  "slug": "de-zalze-winelands-golf-estate"
+  "slug": "de-zalze-winelands-golf-estate",
+  "smsportal": {
+    "destination": "27836441090"
+  }
 }
