@@ -32,6 +32,9 @@ const path = require("path");
     [
       "https://www.privateproperty.co.za/developments/Vredehoek/the-holly/X6137.htm",
       "the-holly",
+      "Your Home in Harmony",
+      "Welcome to The Holly, Horizon Capital Residential's newest development situated at 30 Bradwell Road, Vredehoek. Inspired by the art deco heritage of the neighbourhood, The Holly's design brings contemporary urban living to life in harmony with its environment.",
+      "/images/pages/the-holly.jpg",
     ],
     [
       "https://www.privateproperty.co.za/developments/Camps-Bay/medburn-villas/X6134.htm",
@@ -86,7 +89,7 @@ const path = require("path");
   const objs = [];
 
   for (const url of urls) {
-    objs.push(await handle(url[0], url[1], url[2], url[3]));
+    objs.push(await handle(url[0], url[1], url[2], url[3], url[4]));
   }
 
   fs.writeFileSync(
@@ -95,7 +98,7 @@ const path = require("path");
   );
 })();
 
-async function handle(url, slug, title, description) {
+async function handle(url, slug, title, description, image) {
   const response = await axios.get(url);
 
   const $ = cheerio.load(response.data);
@@ -108,10 +111,12 @@ async function handle(url, slug, title, description) {
     description = $("#description.description p:nth-of-type(1)").html();
   }
 
-  const image = $("#imagesGallery.imageGallery img:nth-of-type(1)")
-    .attr("srcset")
-    .split(",")[0]
-    .split(" ")[0];
+  if (!image) {
+    image = $("#imagesGallery.imageGallery img:nth-of-type(1)")
+      .attr("srcset")
+      .split(",")[0]
+      .split(" ")[0];
+  }
 
   const obj = {
     airtable: {
@@ -121,6 +126,11 @@ async function handle(url, slug, title, description) {
     },
     completeText: "Get in touch",
     image,
+    meta: {
+      description,
+      image,
+      title,
+    },
     pages: [
       {
         description,
@@ -158,6 +168,7 @@ async function handle(url, slug, title, description) {
       },
     ],
     slug,
+    template: "squeeze-page",
   };
 
   fs.writeFileSync(
