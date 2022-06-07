@@ -41,7 +41,13 @@ export function SqueezePage(props) {
                   content: `Contact ${values.name}, ${values.emailAddress}, ${values.mobileNumber}`,
                   destination: "0766542813",
                 },
-              ],
+                props.smsportal
+                  ? {
+                      content: `Contact ${values.name}, ${values.emailAddress}, ${values.mobileNumber}`,
+                      destination: props.smsportal.destination,
+                    }
+                  : null,
+              ].filter((x) => (x ? true : false)),
             },
             {
               headers: {
