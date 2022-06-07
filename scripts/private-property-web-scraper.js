@@ -97,6 +97,7 @@ const path = require("path");
     JSON.stringify([
       "breeze-rentals",
       "charles-leedo",
+      "de-zalze-winelands-golf-estate",
       "david-longmore",
       "founder",
       ...objs.map((x) => x.slug),
