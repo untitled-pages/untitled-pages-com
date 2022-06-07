@@ -1,0 +1,46 @@
+{
+  "airtable": {
+    "apiKey": "keywUEWZniOrHqDgC",
+    "baseId": "appWR4jHBZKYWT5bf",
+    "tableName": "Leads"
+  },
+  "completeText": "Get in touch",
+  "image": "/images/pages/example.jpg",
+  "pages": [
+    {
+      "description": "Looking for your next weekend getaway or holiday destination? Breeze Rentals has you covered with many rentals to enjoy your stay away from home. We focus to bringing the beach to you!",
+      "elements": [
+        {
+          "autoComplete": "name",
+          "name": "name",
+          "placeholder": "Enter your name",
+          "title": "Name",
+          "type": "text"
+        },
+        {
+          "autoComplete": "email",
+          "name": "emailAddress",
+          "placeholder": "Enter your email address",
+          "title": "Email Address",
+          "type": "email"
+        },
+        {
+          "autoComplete": "tel",
+          "name": "mobileNumber",
+          "placeholder": "Enter your mobile number",
+          "title": "Mobile Number",
+          "type": "tel"
+        }
+      ],
+      "name": "page1",
+      "title": "Breeze Rentals"
+    },
+    {
+      "description": null,
+      "elements": [],
+      "name": "page2",
+      "title": "We'll talk soon!"
+    }
+  ],
+  "slug": "breeze-rentals"
+}
