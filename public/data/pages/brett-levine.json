@@ -1,0 +1,46 @@
+{
+  "airtable": {
+    "apiKey": "keywUEWZniOrHqDgC",
+    "baseId": "appWR4jHBZKYWT5bf",
+    "tableName": "Leads"
+  },
+  "completeText": "Get in touch",
+  "image": "/images/pages/brett-levine.jpg",
+  "pages": [
+    {
+      "description": "Houses like this are not available often on the prestigious De Zalze Golf Estate. This home features iconic golf course and mountain views. Spacious bedrooms and the flow of kitchen and entertainment areas further accentuate the desirability of this very special property. There is only one neighbour and the home offers unique privacy in this sought after security estate.",
+      "elements": [
+        {
+          "autoComplete": "name",
+          "name": "name",
+          "placeholder": "Enter your name",
+          "title": "Name",
+          "type": "text"
+        },
+        {
+          "autoComplete": "email",
+          "name": "emailAddress",
+          "placeholder": "Enter your email address",
+          "title": "Email Address",
+          "type": "email"
+        },
+        {
+          "autoComplete": "tel",
+          "name": "mobileNumber",
+          "placeholder": "Enter your mobile number",
+          "title": "Mobile Number",
+          "type": "tel"
+        }
+      ],
+      "name": "page1",
+      "title": "6 Bedroom House For Sale in De Zalze Winelands Golf Estate"
+    },
+    {
+      "description": null,
+      "elements": [],
+      "name": "page2",
+      "title": "We'll talk soon!"
+    }
+  ],
+  "slug": "brett-levine"
+}
