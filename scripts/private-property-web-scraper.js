@@ -94,7 +94,12 @@ const path = require("path");
 
   fs.writeFileSync(
     path.join(__dirname, "..", "public", "data", "pages", `pages.json`),
-    JSON.stringify(["charles-leedo", "founder", ...objs.map((x) => x.slug)])
+    JSON.stringify([
+      "charles-leedo",
+      "david-longmore",
+      "founder",
+      ...objs.map((x) => x.slug),
+    ])
   );
 })();
 
@@ -114,8 +119,9 @@ async function handle(url, slug, title, description, image) {
   if (!image) {
     image = $("#imagesGallery.imageGallery img:nth-of-type(1)")
       .attr("srcset")
-      .split(",")[0]
-      .split(" ")[0];
+      .split(",")
+      .at(-1)
+      .split(" ")[1];
   }
 
   const obj = {

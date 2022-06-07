@@ -94,6 +94,46 @@ export default function Home() {
                     <a className="nav-link p-0 text-muted">Arnim Apartments</a>
                   </Link>
                 </li>
+                <li className="mb-2 nav-item">
+                  <Link href="/eighty2-on-m">
+                    <a className="nav-link p-0 text-muted">Eighty2 On M</a>
+                  </Link>
+                </li>
+                <li className="mb-2 nav-item">
+                  <Link href="/glenwood">
+                    <a className="nav-link p-0 text-muted">Glenwood</a>
+                  </Link>
+                </li>
+                <li className="mb-2 nav-item">
+                  <Link href="/harbour-bay">
+                    <a className="nav-link p-0 text-muted">harbour-bay</a>
+                  </Link>
+                </li>
+                <li className="mb-2 nav-item">
+                  <Link href="/kings-corner">
+                    <a className="nav-link p-0 text-muted">Kings Corner</a>
+                  </Link>
+                </li>
+                <li className="mb-2 nav-item">
+                  <Link href="/medburn-villas">
+                    <a className="nav-link p-0 text-muted">medburn-villas</a>
+                  </Link>
+                </li>
+                <li className="mb-2 nav-item">
+                  <Link href="/station-house">
+                    <a className="nav-link p-0 text-muted">Station House</a>
+                  </Link>
+                </li>
+                <li className="mb-2 nav-item">
+                  <Link href="/the-carrington">
+                    <a className="nav-link p-0 text-muted">The Carrington</a>
+                  </Link>
+                </li>
+                <li className="mb-2 nav-item">
+                  <Link href="/the-holly">
+                    <a className="nav-link p-0 text-muted">The Holly</a>
+                  </Link>
+                </li>
               </ul>
             </Col>
 
@@ -108,6 +148,11 @@ export default function Home() {
                 <li className="mb-2 nav-item">
                   <Link href="/charles-leedo">
                     <a className="nav-link p-0 text-muted">Charles Leedo</a>
+                  </Link>
+                </li>
+                <li className="mb-2 nav-item">
+                  <Link href="/david-longmore">
+                    <a className="nav-link p-0 text-muted">David Longmore</a>
                   </Link>
                 </li>
               </ul>
