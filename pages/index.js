@@ -106,7 +106,7 @@ export default function Home() {
                 </li>
                 <li className="mb-2 nav-item">
                   <Link href="/harbour-bay">
-                    <a className="nav-link p-0 text-muted">harbour-bay</a>
+                    <a className="nav-link p-0 text-muted">Harbour Bay</a>
                   </Link>
                 </li>
                 <li className="mb-2 nav-item">
@@ -116,7 +116,7 @@ export default function Home() {
                 </li>
                 <li className="mb-2 nav-item">
                   <Link href="/medburn-villas">
-                    <a className="nav-link p-0 text-muted">medburn-villas</a>
+                    <a className="nav-link p-0 text-muted">Medburn Villas</a>
                   </Link>
                 </li>
                 <li className="mb-2 nav-item">
@@ -143,6 +143,11 @@ export default function Home() {
                 <li className="mb-2 nav-item">
                   <Link href="/founder">
                     <a className="nav-link p-0 text-muted">Founder</a>
+                  </Link>
+                </li>
+                <li className="mb-2 nav-item">
+                  <Link href="/breeze-rentals">
+                    <a className="nav-link p-0 text-muted">Breeze Rentals</a>
                   </Link>
                 </li>
                 <li className="mb-2 nav-item">

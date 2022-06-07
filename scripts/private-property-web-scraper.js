@@ -95,6 +95,7 @@ const path = require("path");
   fs.writeFileSync(
     path.join(__dirname, "..", "public", "data", "pages", `pages.json`),
     JSON.stringify([
+      "breeze-rentals",
       "charles-leedo",
       "david-longmore",
       "founder",
