@@ -81,7 +81,7 @@ export default function Home() {
                 </li>
                 <li className="mb-2 nav-item">
                   <Link href="/96-on-newlands">
-                    <a className="nav-link p-0 text-muted">96 On newlands</a>
+                    <a className="nav-link p-0 text-muted">96 On Newlands</a>
                   </Link>
                 </li>
                 <li className="mb-2 nav-item">
