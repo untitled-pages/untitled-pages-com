@@ -114,7 +114,7 @@ export function SqueezePage(props) {
         ) : null}
         <Col className="col p-5" md={6} sm={12} xs={12}>
           {props.pages[pageIndex].title ? (
-            <h1 className="display-2">{props.pages[pageIndex].title}</h1>
+            <h1 className="display-3">{props.pages[pageIndex].title}</h1>
           ) : null}
 
           {props.pages[pageIndex].description ? (
