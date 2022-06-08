@@ -31,8 +31,8 @@ const Home: NextPage = () => {
 
       <div className="bg-light">
         <Container className="py-5">
-          <Row className="m-0">
-            <Col className="p-5" md={6} sm={12}>
+          <Row className="gy-2 m-0">
+            <Col md={6} sm={12}>
               <h1 className="display-4 fw-bold">Turn visitors into leads</h1>
               <p className="lead">
                 Start relationships on the right foot with a friendly page that
@@ -62,7 +62,7 @@ const Home: NextPage = () => {
       </div>
 
       <Container className="py-5">
-        <Row className="m-0">
+        <Row className="gy-2 m-0">
           <Col>
             <Image
               alt="Illustration"
@@ -72,7 +72,7 @@ const Home: NextPage = () => {
               width={873}
             />
           </Col>
-          <Col className="p-5" md={{ offset: 2, span: 6 }} sm={12}>
+          <Col md={{ offset: 2, span: 6 }} sm={12}>
             <h1 className="display-5">Build your survey</h1>
             <p className="lead">
               Customize a template or start fresh. Bring it all to life with
@@ -83,8 +83,8 @@ const Home: NextPage = () => {
       </Container>
 
       <Container className="py-5">
-        <Row className="m-0">
-          <Col className="p-5" md={6} sm={12}>
+        <Row className="gy-2 m-0">
+          <Col md={6} sm={12}>
             <h1 className="display-5">Engage your audience</h1>
             <p className="lead">
               Launch your typeform from an email or embed right into your site.
