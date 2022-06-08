@@ -1,9 +1,12 @@
 import axios from "axios";
-import { SqueezePage } from "../components/squeeze-page";
+import { SqueezePage } from "../components";
+import { IForm } from "../core";
 
-export default function Slug(props) {
+const Slug = (props: IForm) => {
   return <SqueezePage {...props} />;
-}
+};
+
+export default Slug;
 
 export async function getStaticPaths() {
   // return {
@@ -11,12 +14,12 @@ export async function getStaticPaths() {
   //   fallback: false,
   // };
 
-  const response = await axios.get(
+  const response = await axios.get<Array<string>>(
     `https://untitledpages.com/data/pages/pages.json`
   );
 
   return {
-    paths: response.data.map((x) => {
+    paths: response.data.map((x: string) => {
       return {
         params: {
           slug: x,
@@ -27,7 +30,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: IForm }) {
   const response = await axios.get(
     `https://untitledpages.com/data/pages/${params.slug}.json`
   );

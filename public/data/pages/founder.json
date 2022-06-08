@@ -1,11 +1,12 @@
 {
-  "airtable": {
-    "apiKey": "keywUEWZniOrHqDgC",
-    "baseId": "appWR4jHBZKYWT5bf",
-    "tableName": "Leads"
-  },
   "completeText": "Let's build something amazing",
   "image": "/images/pages/founder.jpg",
+  "meta": {
+    "description": "a Certified Microsoft Solutions Architect, designing and building systems for fintech companies using my 8+ years of experience in the software engineering industry.",
+    "image": "/images/pages/founder-open-graph-image.jpg",
+    "title": "I'm Barend Erasmus",
+    "url": "https://untitledpages.com/founder"
+  },
   "pages": [
     {
       "description": "a Certified Microsoft Solutions Architect, designing and building systems for fintech companies using my 8+ years of experience in the software engineering industry.",
@@ -34,12 +35,8 @@
       ],
       "name": "page1",
       "title": "I'm Barend Erasmus"
-    },
-    {
-      "description": null,
-      "elements": [],
-      "name": "page2",
-      "title": "We'll talk soon!"
     }
-  ]
+  ],
+  "slug": "founder",
+  "template": "squeeze-page"
 }
