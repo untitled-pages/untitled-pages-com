@@ -61,8 +61,50 @@ const Home: NextPage = () => {
         </Container>
       </div>
 
+      <Container className="py-5">
+        <Row className="m-0">
+          <Col>
+            <Image
+              alt="Illustration"
+              height={528.67134}
+              src="/images/undraw_landing_page_re_6xev.svg"
+              unoptimized={true}
+              width={873}
+            />
+          </Col>
+          <Col className="p-5" md={{ offset: 2, span: 6 }} sm={12}>
+            <h1 className="display-5">Build your survey</h1>
+            <p className="lead">
+              Customize a template or start fresh. Bring it all to life with
+              images, videos, and GIFs.
+            </p>
+          </Col>
+        </Row>
+      </Container>
+
+      <Container className="py-5">
+        <Row className="m-0">
+          <Col className="p-5" md={6} sm={12}>
+            <h1 className="display-5">Engage your audience</h1>
+            <p className="lead">
+              Launch your typeform from an email or embed right into your site.
+              No coding needed.
+            </p>
+          </Col>
+          <Col md={{ offset: 2, span: 4 }} sm={12}>
+            <Image
+              alt="Illustration"
+              height={528.67134}
+              src="/images/undraw_landing_page_re_6xev.svg"
+              unoptimized={true}
+              width={873}
+            />
+          </Col>
+        </Row>
+      </Container>
+
       <Container className="p-5">
-        <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <div className="mx-auto p-3 pb-md-4 text-center">
           <h1 className="display-4 fw-normal">Pricing</h1>
         </div>
 
