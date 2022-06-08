@@ -1,7 +1,15 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Button, Col, Container, Nav, Navbar, Row } from "react-bootstrap";
+import {
+  Button,
+  Card,
+  Col,
+  Container,
+  Nav,
+  Navbar,
+  Row,
+} from "react-bootstrap";
 
 const Home: NextPage = () => {
   return (
@@ -24,16 +32,21 @@ const Home: NextPage = () => {
       <div className="bg-light">
         <Container className="py-5">
           <Row className="m-0">
-            <Col className="p-5" md={6} sm={12} xs={12}>
+            <Col className="p-5" md={6} sm={12}>
               <h1 className="display-4 fw-bold">Turn visitors into leads</h1>
               <p className="lead">
                 Start relationships on the right foot with a friendly page that
                 invite people to leave their email.
               </p>
 
-              <Button size="lg" variant="primary">
-                Get started for free
-              </Button>
+              <div className="d-lg-flex d-md-flex d-sm-flex d-flex-lg-row d-flex-md-row d-flex-sm-column">
+                <Button className="m-2" size="lg" variant="primary">
+                  Get started for free
+                </Button>
+                <Button className="m-2" size="lg" variant="outline-primary">
+                  Contact us
+                </Button>
+              </div>
             </Col>
             <Col>
               <Image
@@ -49,9 +62,54 @@ const Home: NextPage = () => {
       </div>
 
       <Container className="p-5">
+        <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 className="display-4 fw-normal">Pricing</h1>
+        </div>
+
+        <Row>
+          <Col className="p-2" md={{ offset: 2, span: 4 }}>
+            <Card className=" text-center">
+              <Card.Header>Starter</Card.Header>
+              <Card.Body>
+                <Card.Title>
+                  <h1>
+                    $0<small className="text-muted fw-light">/mo</small>
+                  </h1>
+                </Card.Title>
+                <Card.Text>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Quisque mi mauris, consectetur vel feugiat in, pretium et
+                  ante.
+                </Card.Text>
+                <Button variant="primary">Sign up</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col className="p-2" md={4} sm={12}>
+            <Card className=" text-center">
+              <Card.Header>Pro</Card.Header>
+              <Card.Body>
+                <Card.Title>
+                  <h1>
+                    $5<small className="text-muted fw-light">/mo</small>
+                  </h1>
+                </Card.Title>
+                <Card.Text>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Quisque mi mauris, consectetur vel feugiat in, pretium et
+                  ante.
+                </Card.Text>
+                <Button variant="primary">Sign up</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+
+      <Container className="p-5">
         <footer>
           <Row>
-            <Col className="py-2" md={2} sm={12} xs={12}>
+            <Col className="py-2" md={2} sm={12}>
               <h5>Untitled Pages</h5>
               <ul className="flex-column nav">
                 <li className="mb-2 nav-item">
@@ -72,7 +130,7 @@ const Home: NextPage = () => {
               </ul>
             </Col>
 
-            <Col className="py-2" md={{ offset: 6, span: 4 }} sm={12} xs={12}>
+            <Col className="py-2" md={{ offset: 6, span: 4 }} sm={12}>
               <form>
                 <h5>Don&apos;t miss out</h5>
                 <p>Sign up for our newsletter to stay in the loop</p>

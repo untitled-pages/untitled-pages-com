@@ -57,7 +57,7 @@ export function SqueezePage(props: IForm) {
       <div className="bg-light">
         <Container className="py-5">
           <Row className="m-0">
-            <Col className="p-5" md={6} sm={12} xs={12}>
+            <Col className="p-5" md={6} sm={12}>
               <h1 className="display-4 fw-bold">Lorem ipsum dolor sit amet</h1>
               <p className="lead">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
@@ -98,7 +98,7 @@ export function SqueezePage(props: IForm) {
         <Col className="bg-primary d-none d-lg-block d-md-block full-height"></Col>
       )}
 
-      <Col className="p-5" md={6} sm={12} xs={12}>
+      <Col className="p-5" md={6} sm={12}>
         {props.pages[pageIndex].title ? (
           <h1 className="display-3">{props.pages[pageIndex].title}</h1>
         ) : null}
@@ -150,7 +150,6 @@ export function SqueezePage(props: IForm) {
           className="d-none d-lg-block d-md-block mt-0 px-0"
           md={{ offset: 2, span: 4 }}
           sm={12}
-          xs={12}
         >
           <img
             alt={`Image of ${props.pages[pageIndex].title}`}
