@@ -30,8 +30,8 @@ const Home: NextPage = () => {
       </Navbar>
 
       <div className="bg-light">
-        <Container className="py-5">
-          <Row className="gy-2 m-0">
+        <Container className="p-5">
+          <Row className="gy-5 m-0">
             <Col md={6} sm={12}>
               <h1 className="display-4 fw-bold">Turn visitors into leads</h1>
               <p className="lead">
@@ -61,9 +61,9 @@ const Home: NextPage = () => {
         </Container>
       </div>
 
-      <Container className="py-5">
-        <Row className="gy-2 m-0">
-          <Col>
+      <Container className="p-5">
+        <Row className="gy-5 m-0">
+          <Col className="d-none d-md-block">
             <Image
               alt="Illustration"
               height={528.67134}
@@ -79,16 +79,25 @@ const Home: NextPage = () => {
               images, videos, and GIFs.
             </p>
           </Col>
+          <Col className="d-block d-md-none">
+            <Image
+              alt="Illustration"
+              height={528.67134}
+              src="/images/undraw_landing_page_re_6xev.svg"
+              unoptimized={true}
+              width={873}
+            />
+          </Col>
         </Row>
       </Container>
 
-      <Container className="py-5">
-        <Row className="gy-2 m-0">
+      <Container className="p-5">
+        <Row className="gy-5 m-0">
           <Col md={6} sm={12}>
             <h1 className="display-5">Engage your audience</h1>
             <p className="lead">
-              Launch your typeform from an email or embed right into your site.
-              No coding needed.
+              Launch your page from an email or embed right into your site. No
+              coding needed.
             </p>
           </Col>
           <Col md={{ offset: 2, span: 4 }} sm={12}>
@@ -104,7 +113,37 @@ const Home: NextPage = () => {
       </Container>
 
       <Container className="p-5">
-        <div className="mx-auto p-3 pb-md-4 text-center">
+        <Row className="gy-5 m-0">
+          <Col className="d-none d-md-block">
+            <Image
+              alt="Illustration"
+              height={528.67134}
+              src="/images/undraw_landing_page_re_6xev.svg"
+              unoptimized={true}
+              width={873}
+            />
+          </Col>
+          <Col md={{ offset: 2, span: 6 }} sm={12}>
+            <h1 className="display-5">Collect leads</h1>
+            <p className="lead">
+              Sync responses to your email platform, or ping your sales team in
+              Slack. Send the data where you work best.
+            </p>
+          </Col>
+          <Col className="d-block d-md-none">
+            <Image
+              alt="Illustration"
+              height={528.67134}
+              src="/images/undraw_landing_page_re_6xev.svg"
+              unoptimized={true}
+              width={873}
+            />
+          </Col>
+        </Row>
+      </Container>
+
+      <Container className="p-5">
+        <div className="p-2 text-center">
           <h1 className="display-4 fw-normal">Pricing</h1>
         </div>
 
