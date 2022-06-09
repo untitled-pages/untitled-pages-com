@@ -73,7 +73,7 @@ const Home: NextPage = () => {
             />
           </Col>
           <Col md={{ offset: 2, span: 6 }} sm={12}>
-            <h1 className="display-5">Build your survey</h1>
+            <h2 className="display-5">Build your survey</h2>
             <p className="lead">
               Customize a template or start fresh. Bring it all to life with
               images, videos, and GIFs.
@@ -94,7 +94,7 @@ const Home: NextPage = () => {
       <Container className="p-5">
         <Row className="gy-5 m-0">
           <Col md={6} sm={12}>
-            <h1 className="display-5">Engage your audience</h1>
+            <h2 className="display-5">Engage your audience</h2>
             <p className="lead">
               Launch your page from an email or embed right into your site. No
               coding needed.
@@ -124,7 +124,7 @@ const Home: NextPage = () => {
             />
           </Col>
           <Col md={{ offset: 2, span: 6 }} sm={12}>
-            <h1 className="display-5">Collect leads</h1>
+            <h2 className="display-5">Collect leads</h2>
             <p className="lead">
               Sync responses to your email platform, or ping your sales team in
               Slack. Send the data where you work best.
@@ -144,18 +144,18 @@ const Home: NextPage = () => {
 
       <Container className="p-5">
         <div className="p-2 text-center">
-          <h1 className="display-4 fw-normal">Pricing</h1>
+          <h2 className="display-4 fw-normal">Pricing</h2>
         </div>
 
         <Row>
           <Col className="p-2" md={{ offset: 2, span: 4 }}>
-            <Card className=" text-center">
+            <Card className="text-center">
               <Card.Header>Starter</Card.Header>
               <Card.Body>
                 <Card.Title>
-                  <h1>
+                  <h3>
                     $0<small className="text-muted fw-light">/mo</small>
-                  </h1>
+                  </h3>
                 </Card.Title>
                 <Card.Text>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -167,13 +167,13 @@ const Home: NextPage = () => {
             </Card>
           </Col>
           <Col className="p-2" md={4} sm={12}>
-            <Card className=" text-center">
+            <Card className="text-center">
               <Card.Header>Pro</Card.Header>
               <Card.Body>
                 <Card.Title>
-                  <h1>
+                  <h3>
                     $5<small className="text-muted fw-light">/mo</small>
-                  </h1>
+                  </h3>
                 </Card.Title>
                 <Card.Text>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
