@@ -1,3 +1,4 @@
 export * from "./form";
 export * from "./form-element";
-export * from "./form-page";
+export * from "./page";
+export * from "./page-element";

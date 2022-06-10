@@ -10,6 +10,7 @@ import {
   Navbar,
   Row,
 } from "react-bootstrap";
+import { XFeature } from "../components";
 
 const Home: NextPage = () => {
   return (
@@ -33,10 +34,14 @@ const Home: NextPage = () => {
         <Container className="p-5">
           <Row className="gy-5 m-0">
             <Col md={6} sm={12}>
-              <h1 className="display-4 fw-bold">Turn visitors into leads</h1>
+              <h1 className="display-4 fw-bold">
+                Choose From Over 100 High-Converting Landing Page Templates
+              </h1>
               <p className="lead">
-                Start relationships on the right foot with a friendly page that
-                invite people to leave their email.
+                We’ve distilled everything we know about conversion into
+                ready-to-use templates for landing pages, popups, and sticky
+                bars. Use our drag-and-drop builder to make a beautiful page
+                fast—or start with a blank canvas.
               </p>
 
               <div className="d-lg-flex d-md-flex d-sm-flex d-flex-lg-row d-flex-md-row d-flex-sm-column">
@@ -62,84 +67,87 @@ const Home: NextPage = () => {
       </div>
 
       <Container className="p-5">
-        <Row className="gy-5 m-0">
-          <Col className="d-none d-md-block">
-            <Image
-              alt="Illustration"
-              height={528.67134}
-              src="/images/undraw_landing_page_re_6xev.svg"
-              unoptimized={true}
-              width={873}
-            />
-          </Col>
-          <Col md={{ offset: 2, span: 6 }} sm={12}>
-            <h2 className="display-5">Build your survey</h2>
-            <p className="lead">
-              Customize a template or start fresh. Bring it all to life with
-              images, videos, and GIFs.
-            </p>
-          </Col>
-          <Col className="d-block d-md-none">
-            <Image
-              alt="Illustration"
-              height={528.67134}
-              src="/images/undraw_landing_page_re_6xev.svg"
-              unoptimized={true}
-              width={873}
-            />
-          </Col>
-        </Row>
+        <XFeature
+          descriptions={[
+            "79% of B2B marketers say email is the most effective channel for demand generation, so it’s not surprising that squeeze pages are one of the most important and effective landing pages out there.",
+            "A squeeze page is one in which the goal is to capture the user’s email address. Once you have the address, you can begin to nurture that lead with relevant content and other offers.",
+            "The most common type of squeeze page is gated content or a prompt to enter your email address to receive a newsletter, ebook, whitepaper, or other content offer.",
+            "Make sure your squeeze page is simple, your CTA is tempting enough to get your user to give up their email address, and you make it easy for users to click out of the page and onto the content that brought them to your site.",
+          ]}
+          image={{
+            height: 528.67134,
+            src: "/images/undraw_landing_page_re_6xev.svg",
+            width: 873,
+          }}
+          title="Squeeze Page"
+          type="right"
+        ></XFeature>
       </Container>
 
       <Container className="p-5">
-        <Row className="gy-5 m-0">
-          <Col md={6} sm={12}>
-            <h2 className="display-5">Engage your audience</h2>
-            <p className="lead">
-              Launch your page from an email or embed right into your site. No
-              coding needed.
-            </p>
-          </Col>
-          <Col md={{ offset: 2, span: 4 }} sm={12}>
-            <Image
-              alt="Illustration"
-              height={528.67134}
-              src="/images/undraw_landing_page_re_6xev.svg"
-              unoptimized={true}
-              width={873}
-            />
-          </Col>
-        </Row>
+        <XFeature
+          descriptions={[
+            "A splash landing page doesn’t always have lead capture as the main goal. These pages are often used when someone clicks a social media or content link. Instead of being sent directly to the article or social media destination, the user is sent to an intermediary page: the splash page.",
+            "This page might share an announcement with the user, such as “We’ve just unveiled new dates for our 2019 marketing conference!” It might also ask your user for a language preference or to enter their age. The splash page might also present an ad, which the publisher benefits from, if the user clicks on the ad.",
+          ]}
+          image={{
+            height: 528.67134,
+            src: "/images/undraw_landing_page_re_6xev.svg",
+            width: 873,
+          }}
+          title="Splash Page"
+          type="left"
+        ></XFeature>
       </Container>
 
       <Container className="p-5">
-        <Row className="gy-5 m-0">
-          <Col className="d-none d-md-block">
-            <Image
-              alt="Illustration"
-              height={528.67134}
-              src="/images/undraw_landing_page_re_6xev.svg"
-              unoptimized={true}
-              width={873}
-            />
-          </Col>
-          <Col md={{ offset: 2, span: 6 }} sm={12}>
-            <h2 className="display-5">Collect leads</h2>
-            <p className="lead">
-              Sync responses to your email platform, or ping your sales team in
-              Slack. Send the data where you work best.
-            </p>
-          </Col>
-          <Col className="d-block d-md-none">
-            <Image
-              alt="Illustration"
-              height={528.67134}
-              src="/images/undraw_landing_page_re_6xev.svg"
-              unoptimized={true}
-              width={873}
-            />
-          </Col>
-        </Row>
+        <XFeature
+          descriptions={[
+            "A lead capture page is similar to a squeeze page, but generally sources more information. Name, business name, email address, job title, and industry are just a few things these landing pages seek to earn.",
+            "The information you request depends on the goals for the page and those of your sales and marketing teams, as well as where the customer is in the funnel. If your lead capture page is top of the funnel, step away from the eight-lined form, please.",
+            "If, however, your customer is landing on your lead capture page after demonstrating real interest in your product/service (i.e., they downloaded two case studies) you should be able to ask for more information to help qualify and direct them.",
+          ]}
+          image={{
+            height: 528.67134,
+            src: "/images/undraw_landing_page_re_6xev.svg",
+            width: 873,
+          }}
+          title="Lead Capture Page"
+          type="right"
+        ></XFeature>
+      </Container>
+
+      <Container className="p-5">
+        <XFeature
+          descriptions={[
+            "Every marketer knows you must provide value to your customer before asking them for money. A click-through landing page provides that value without pummeling your customer with a “Buy Now” button before they’re ready.",
+            "Often, this looks like a landing page that shares the benefits and features of your product/service with a CTA button encouraging your customer to try a free trial. Once they click on that button, they’re taken to another landing page which provides pricing details and requires payment information to begin the trial.",
+            "By the time your customer lands on this page, however, they're primed and educated on why they should move forward with the trial. In the examples below, you see the click-through landing page, and then the payment landing page customers are sent to when they decide to embark on a free trial.",
+          ]}
+          image={{
+            height: 528.67134,
+            src: "/images/undraw_landing_page_re_6xev.svg",
+            width: 873,
+          }}
+          title="Click-Through Landing Page"
+          type="left"
+        ></XFeature>
+      </Container>
+
+      <Container className="p-5">
+        <XFeature
+          descriptions={[
+            "A “Get Started” landing page should lead with your offer above the fold. Take this page, from Mailchimp, which explains their overarching benefits: tools that turn audience data into insights that will guide campaigns.",
+            "Hooked already? Great, because a “Get Started” button awaits. Need more convincing? Well, the details follow as you scroll a feature- and benefit-laden landing page.",
+          ]}
+          image={{
+            height: 528.67134,
+            src: "/images/undraw_landing_page_re_6xev.svg",
+            width: 873,
+          }}
+          title="“Get Started” Landing Page"
+          type="right"
+        ></XFeature>
       </Container>
 
       <Container className="p-5">
