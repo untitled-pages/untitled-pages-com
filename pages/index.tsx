@@ -46,7 +46,7 @@ const Home: NextPage = () => {
 
               <div className="d-lg-flex d-md-flex d-sm-flex d-flex-lg-row d-flex-md-row d-flex-sm-column">
                 <Button className="m-2" size="lg" variant="primary">
-                  Get started for free
+                  Learn more
                 </Button>
                 <Button className="m-2" size="lg" variant="outline-primary">
                   Contact us
@@ -75,9 +75,9 @@ const Home: NextPage = () => {
             "Make sure your squeeze page is simple, your CTA is tempting enough to get your user to give up their email address, and you make it easy for users to click out of the page and onto the content that brought them to your site.",
           ]}
           image={{
-            height: 528.67134,
-            src: "/images/undraw_landing_page_re_6xev.svg",
-            width: 873,
+            height: 1080,
+            src: "/images/templates/squeeze-page.jpg",
+            width: 1920,
           }}
           title="Squeeze Page"
           type="right"
@@ -150,7 +150,7 @@ const Home: NextPage = () => {
         ></XFeature>
       </Container>
 
-      <Container className="p-5">
+      {/* <Container className="p-5">
         <div className="p-2 text-center">
           <h2 className="display-4 fw-normal">Pricing</h2>
         </div>
@@ -193,7 +193,7 @@ const Home: NextPage = () => {
             </Card>
           </Col>
         </Row>
-      </Container>
+      </Container> */}
 
       <Container className="p-5">
         <footer>
